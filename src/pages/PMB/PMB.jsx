@@ -35,6 +35,7 @@ const Reveal = ({ children, className = "", delay = 0 }) => {
 
 /* ========== ICONS ========== */
 const cardIcons = [
+  // Akademik - bintang
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M12 3L14.8 8.7L21 9.6L16.5 14L17.6 20.2L12 17.3L6.4 20.2L7.5 14L3 9.6L9.2 8.7L12 3Z"
@@ -44,6 +45,7 @@ const cardIcons = [
     />
   </svg>,
 
+  // Pemerintahan - gedung/buku
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M4 19V5C4 4.4 4.4 4 5 4H19C19.6 4 20 4.4 20 5V19"
@@ -65,6 +67,7 @@ const cardIcons = [
     />
   </svg>,
 
+  // Sosial & Kemasyarakatan - orang
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.6" />
     <path
@@ -75,6 +78,7 @@ const cardIcons = [
     />
   </svg>,
 
+  // Media & Komunikasi - dokumen
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M4 7H20M7 4V7M17 4V7M5 10H19V20H5V10Z"
@@ -90,32 +94,153 @@ const cardIcons = [
       strokeLinecap="round"
     />
   </svg>,
+
+  // Digital & Global - globe
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.6" />
+    <path
+      d="M3.5 12H20.5M12 3.5C14.3 6 15.5 9 15.5 12C15.5 15 14.3 18 12 20.5C9.7 18 8.5 15 8.5 12C8.5 9 9.7 6 12 3.5Z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+  </svg>,
+
+  // Wirausaha & Profesional - koper
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect
+      x="3.5"
+      y="8"
+      width="17"
+      height="11"
+      rx="2"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+    <path
+      d="M8.5 8V6.5C8.5 5.7 9.2 5 10 5H14C14.8 5 15.5 5.7 15.5 6.5V8"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+    <path d="M3.5 13H20.5" stroke="currentColor" strokeWidth="1.6" />
+  </svg>,
 ];
 
-/* ========== PROGRAMS ========== */
+/* ========== PROGRAM (TABS) ========== */
 const programs = [
   {
-    id: "s1",
-    label: "Sarjana",
-    title: "Sarjana PPKn",
+    id: "kerja",
+    label: "Prospek Kerja",
+    type: "kerja",
+    title: "Prospek Kerja Lulusan PPKn",
     subtitle:
-      "Bangun karakter, literasi kebangsaan, dan kepemimpinan melalui pendidikan kewarganegaraan di UNPAM.",
-    cards: [
-      "Kurikulum PPKn UNPAM dirancang untuk membentuk mahasiswa yang paham Pancasila, demokrasi, HAM, hukum, serta tanggung jawab sebagai warga negara yang aktif dan berintegritas.",
-      "Mahasiswa dibekali kemampuan pedagogik, komunikasi, dan analisis sosial untuk siap menjadi pendidik, penggerak masyarakat, serta agen perubahan di lingkungan pendidikan dan bangsa.",
-      "UNPAM mendorong pengembangan diri melalui kegiatan organisasi, pengabdian masyarakat, dan pengalaman belajar yang relevan dengan kebutuhan pendidikan Indonesia saat ini.",
+      "Lulusan PPKn UNPAM siap berkiprah di berbagai bidang, mulai dari pendidikan, pemerintahan, hingga kewirausahaan sosial.",
+    categories: [
+      {
+        title: "Bidang Akademik",
+        items: [
+          "Guru PPKn (SD, SMP, SMA/SMK)",
+          "Dosen (dengan studi lanjut S2/S3)",
+          "Pengembang kurikulum & media pembelajaran",
+          "Trainer pendidikan karakter & kebangsaan",
+        ],
+      },
+      {
+        title: "Bidang Pemerintahan",
+        items: [
+          "Aparatur Sipil Negara (ASN/PNS)",
+          "Staf kementerian & lembaga negara",
+          "Analis kebijakan publik",
+          "Tenaga ahli bidang hukum, politik, dan kewarganegaraan",
+        ],
+      },
+      {
+        title: "Bidang Sosial & Kemasyarakatan",
+        items: [
+          "Aktivis LSM/NGO (demokrasi, HAM, pendidikan)",
+          "Penggerak masyarakat (community development)",
+          "Fasilitator pemberdayaan & partisipasi publik",
+          "Praktisi civic governance",
+        ],
+      },
+      {
+        title: "Bidang Media & Komunikasi",
+        items: [
+          "Jurnalis bidang politik & hukum",
+          "Penulis buku & konten edukasi",
+          "Content creator (civic & literasi digital)",
+          "Pengembang media pembelajaran digital",
+        ],
+      },
+      {
+        title: "Bidang Digital & Global",
+        items: [
+          "Praktisi literasi digital & etika digital",
+          "Analis komunikasi publik & opini masyarakat",
+          "Konsultan komunikasi politik",
+          "Pengelola kampanye sosial berbasis digital",
+        ],
+      },
+      {
+        title: "Bidang Wirausaha & Profesional",
+        items: [
+          "Wirausahawan sosial (social entrepreneur)",
+          "Konsultan pendidikan & kebijakan publik",
+          "Pengelola lembaga pelatihan (training center)",
+          "Founder komunitas/edukasi kebangsaan",
+        ],
+      },
     ],
   },
   {
-    id: "s2",
-    label: "Pascasarjana",
-    title: "Pengembangan Profesi dan Keahlian",
+    id: "belajar",
+    label: "Sistem Belajar",
+    type: "belajar",
+    title: "Sistem Belajar",
     subtitle:
-      "Perkuat kompetensi di bidang pendidikan kewarganegaraan, kebijakan publik, dan penguatan karakter bangsa.",
-    cards: [
-      "Program pengembangan profesi di UNPAM membantu mahasiswa dan tenaga pendidik memahami dinamika masyarakat, kebijakan publik, serta isu-isu kontemporer bangsa.",
-      "Pembelajaran berbasis riset, diskusi, dan studi kasus menyiapkan lulusan untuk menjadi pemikir kritis, komunikator yang efektif, dan pemimpin yang berorientasi pada kepentingan bangsa.",
-      "UNPAM membuka ruang kolaborasi dengan dosen, alumni, dan mitra pendidikan untuk memperluas peluang karier di bidang pendidikan, pemerintahan, dan masyarakat.",
+      "Perkuliahan yang fleksibel dan relevan, dirancang untuk menyesuaikan kebutuhan mahasiswa dari berbagai latar belakang.",
+    description:
+      "Menggunakan blended learning yang didukung dengan Learning Management System handal, serta waktu kuliah yang fleksibel dengan 3 program yaitu Reguler A, B, CK, dan CS.",
+    schedule: [
+      {
+        program: "Reguler A",
+        desc: "Tatap muka pada hari Senin–Jum'at (07.10–17.40)",
+      },
+      {
+        program: "Reguler B",
+        desc: "Tatap muka pada hari Senin–Jum'at (18.20–21.45)",
+      },
+      {
+        program: "Reguler CK",
+        desc: "Tatap muka hari Kamis (07.45–17.45) dan Online hari Senin–Jumat",
+      },
+      {
+        program: "Reguler CS",
+        desc: "Tatap muka hari Sabtu (07.45–17.45) dan Online hari Senin–Jumat",
+      },
+    ],
+  },
+  {
+    id: "kegiatan",
+    label: "Kegiatan & Program",
+    type: "kegiatan",
+    title: "Kegiatan & Program Unggulan",
+    subtitle:
+      "Pengalaman belajar di luar kelas untuk memperkuat wawasan kebangsaan dan keterampilan mahasiswa PPKn.",
+    activities: [
+      "Kunjungan Lembaga pemerintah KPK, BPIP, dan Lemhanas",
+      "Kunjungan Desa Adat Baduy",
+      "Duta Program Studi Pendidikan Pancasila dan Kewarganegaraan",
+    ],
+    unggulan: [
+      "Potential Mapping Class",
+      "Pelopor Etika Kehidupan Kampus",
+      "Gerakan Peduli Lingkungan",
+      "Magang di Lembaga Pendidikan",
+      "Laboratorium Pancasila",
+      "Edu Speak",
+      "Civic Write",
+      "Ciap Expo",
     ],
   },
 ];
@@ -334,19 +459,83 @@ export default function PMB() {
                 <p className="pmbProgram__panelSubtitle">{active.subtitle}</p>
               </div>
 
-              <p className="pmbProgram__label">Mengapa PPKn UNPAM?</p>
+              {/* ---- Konten: Prospek Kerja ---- */}
+              {active.type === "kerja" && (
+                <div className="pmbProgram__jobGrid">
+                  {active.categories.map((cat, i) => (
+                    <div className="pmbProgram__jobCategory" key={cat.title}>
+                      <div className="pmbProgram__jobHead">
+                        <span
+                          className="pmbProgram__jobIcon"
+                          aria-hidden="true"
+                        >
+                          {cardIcons[i % cardIcons.length]}
+                        </span>
+                        <h4 className="pmbProgram__jobTitle">{cat.title}</h4>
+                      </div>
 
-              <div className="pmbProgram__cards">
-                {active.cards.map((text, i) => (
-                  <div className="pmbProgram__card" key={i}>
-                    <span className="pmbProgram__cardIcon" aria-hidden="true">
-                      {cardIcons[i]}
-                    </span>
+                      <ul className="pmbProgram__jobList">
+                        {cat.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
 
-                    <p>{text}</p>
+              {/* ---- Konten: Sistem Belajar ---- */}
+              {active.type === "belajar" && (
+                <>
+                  <p className="pmbProgram__belajarText">
+                    {active.description}
+                  </p>
+
+                  <p className="pmbProgram__label">Jadwal Kuliah</p>
+
+                  <div className="pmbProgram__schedule">
+                    {active.schedule.map((s) => (
+                      <div className="pmbProgram__scheduleRow" key={s.program}>
+                        <span className="pmbProgram__scheduleProgram">
+                          {s.program}
+                        </span>
+                        <span className="pmbProgram__scheduleDesc">
+                          {s.desc}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              )}
+
+              {/* ---- Konten: Kegiatan & Program Unggulan ---- */}
+              {active.type === "kegiatan" && (
+                <>
+                  <p className="pmbProgram__label">Kegiatan Mahasiswa</p>
+
+                  <div className="pmbProgram__timeline">
+                    {active.activities.map((a) => (
+                      <div className="pmbProgram__timelineItem" key={a}>
+                        <span
+                          className="pmbProgram__timelineDot"
+                          aria-hidden="true"
+                        />
+                        <p className="pmbProgram__timelineText">{a}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="pmbProgram__label">Program Unggulan</p>
+
+                  <div className="pmbProgram__tags">
+                    {active.unggulan.map((t) => (
+                      <span className="pmbProgram__tag" key={t}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </>
+              )}
 
               <div className="pmbProgram__actions">
                 <a

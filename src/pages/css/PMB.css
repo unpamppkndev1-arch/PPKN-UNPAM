@@ -242,31 +242,60 @@
 /* ---------- Tabs ---------- */
 .pmbProgram__tabs {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 0;
 }
 
+/* Sudut potong (skew) pakai satuan px tetap, bukan %, supaya
+   kemiringan sisi selalu sama walau lebar tab beda-beda
+   (label "Prospek Kerja" vs "Sistem Belajar" vs "Kegiatan & Program"). */
 .pmbProgram__tab {
+    --tab-skew: 22px;
+
     position: relative;
     z-index: 1;
-    padding: 16px 46px;
+    padding: 16px 40px;
     border: none;
     cursor: pointer;
     font-family: inherit;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: rgba(255, 255, 255, 0.75);
     background: linear-gradient(135deg, var(--pmb-maroon) 0%, var(--pmb-maroon-dark) 100%);
     opacity: 0.5;
-    clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
-    margin-right: -24px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* miring di kedua sisi (bentuk jajar genjang) secara default */
+    clip-path: polygon(
+        var(--tab-skew) 0,
+        100% 0,
+        calc(100% - var(--tab-skew)) 100%,
+        0 100%
+    );
+    filter: drop-shadow(0 10px 16px rgba(23, 20, 15, 0.18));
+    margin-right: calc(var(--tab-skew) * -1);
+    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
+/* Tab pertama: sisi kiri lurus, sisi kanan tetap miring */
+.pmbProgram__tab:first-child {
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        calc(100% - var(--tab-skew)) 100%,
+        0 100%
+    );
+    padding-left: 34px;
+}
+
+/* Tab terakhir: sisi kiri miring, sisi kanan lurus (menyatu ke panel) */
 .pmbProgram__tab:last-child {
-    clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(
+        var(--tab-skew) 0,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
     margin-right: 0;
-    padding-left: 46px;
-    padding-right: 46px;
+    padding-right: 44px;
 }
 
 .pmbProgram__tab:hover {
@@ -278,6 +307,7 @@
     color: #fff;
     z-index: 2;
     transform: translateY(0);
+    filter: drop-shadow(0 14px 22px rgba(23, 20, 15, 0.3));
 }
 
 .pmbProgram__tab:focus-visible {
@@ -331,51 +361,151 @@
     font-size: 1.05rem;
 }
 
-.pmbProgram__cards {
+/* ---------- Konten: Prospek Kerja (list, bukan card) ---------- */
+.pmbProgram__jobGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 48px;
     margin-bottom: 36px;
 }
 
-.pmbProgram__card {
-    padding: 22px;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+.pmbProgram__jobCategory {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-.pmbProgram__card:hover {
-    transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.14);
-    box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.3);
+.pmbProgram__jobHead {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
 }
 
-.pmbProgram__cardIcon {
+.pmbProgram__jobIcon {
+    flex-shrink: 0;
     display: inline-flex;
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     align-items: center;
     justify-content: center;
-    margin-bottom: 14px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.14);
     color: #fff;
 }
 
-.pmbProgram__cardIcon svg {
-    width: 18px;
-    height: 18px;
+.pmbProgram__jobIcon svg {
+    width: 16px;
+    height: 16px;
 }
 
-.pmbProgram__card p {
+.pmbProgram__jobTitle {
     margin: 0;
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: #fff;
+}
+
+.pmbProgram__jobList {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.pmbProgram__jobList li {
+    font-size: 0.87rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Konten: Sistem Belajar ---------- */
+.pmbProgram__belajarText {
+    margin: 0 0 30px;
+    max-width: 68ch;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.pmbProgram__schedule {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 36px;
+}
+
+.pmbProgram__scheduleRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.pmbProgram__scheduleProgram {
+    flex: 0 0 140px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.pmbProgram__scheduleDesc {
+    flex: 1 1 260px;
     font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+/* ---------- Konten: Kegiatan & Program Unggulan ---------- */
+.pmbProgram__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 34px;
+}
+
+.pmbProgram__timelineItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.pmbProgram__timelineDot {
+    flex: 0 0 9px;
+    width: 9px;
+    height: 9px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.pmbProgram__timelineText {
+    margin: 0;
+    font-size: 0.93rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
 }
 
+.pmbProgram__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+}
+
+.pmbProgram__tag {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+/* ---------- Actions (shared) ---------- */
 .pmbProgram__actions {
     display: flex;
     flex-wrap: wrap;
@@ -930,17 +1060,56 @@
         padding: 56px 24px 72px;
     }
 
-    .pmbProgram__cards {
+    .pmbProgram__jobGrid {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
-    .pmbProgram__tab {
-        padding: 14px 40px;
-        font-size: 0.85rem;
+    /* Di HP: buang bentuk miring/jajar genjang, jadi kotak biasa yang rapi */
+    .pmbProgram__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 4px;
+    }
+
+    .pmbProgram__tab,
+    .pmbProgram__tab:first-child,
+    .pmbProgram__tab:last-child {
+        flex: 1 1 auto;
+        min-width: 104px;
+        margin-right: 0;
+        padding: 12px 16px;
+        font-size: 0.78rem;
+        text-align: center;
+        border-radius: 12px;
+        clip-path: none;
+        filter: none;
+        box-shadow: none;
+    }
+
+    .pmbProgram__tab.is-active {
+        filter: none;
+        box-shadow: 0 8px 16px -8px rgba(23, 20, 15, 0.35);
     }
 
     .pmbProgram__panel {
+        border-radius: 20px;
         padding: 32px 24px 32px;
+    }
+
+    .pmbProgram__panelTop {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .pmbProgram__panelSubtitle {
+        max-width: none;
+    }
+
+    .pmbProgram__scheduleProgram {
+        flex: 1 1 100%;
     }
 
     .pmbDates {
