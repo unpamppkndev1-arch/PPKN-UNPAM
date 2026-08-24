@@ -3,24 +3,24 @@ import CardPrestasiMahawasiwa from "../../components/CardPrestasiMahasiswa/CardP
 import '../css/PrestasiMahasiswa.css';
 import GambarLomba1 from "../../assets/Prestasi Mahasiswa/Selamat dan sukses.webp";
 
-const PrestasiMahasiswa = () => {
+const PrestasiMahasiswaEN = () => {
   return (
     <section className="prestasiPage">
       <div className="PrestasiTerbaru">
         <header className="titlePrestasi">
           <p className="prestasiEyebrow">PPKn UNPAM</p>
-          <h1>Prestasi Mahasiswa Terbaru</h1>
+          <h1>Latest Student Achievements</h1>
           <p className="prestasiLead">
-            Karya dan perjuangan mahasiswa PPKn di tingkat nasional.
+            The work and dedication of PPKn students at the national level.
           </p>
         </header>
 
         <div className="prestasiGrid">
           <CardPrestasiMahawasiwa
             gambarLomba={GambarLomba1}
-            juara="Juara 2"
-            katagoriSubjek="Kelompok"
-            tingkatLomba="Nasional"
+            juara="2nd Place"
+            katagoriSubjek="Group"
+            tingkatLomba="National"
           />
         </div>
       </div>
@@ -28,4 +28,4 @@ const PrestasiMahasiswa = () => {
   );
 }
 
-export default PrestasiMahasiswa
+export default PrestasiMahasiswaEN
