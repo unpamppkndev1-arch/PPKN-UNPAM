@@ -62,7 +62,7 @@ const ErrorPage = () => {
 
         {/* Judul */}
         <h2 className="error-page__title">Halaman Tidak Ditemukan</h2>
-
+                     
         {/* Deskripsi */}
         <p className="error-page__description">
           Maaf, halaman yang Anda cari tidak tersedia atau telah dipindahkan.
