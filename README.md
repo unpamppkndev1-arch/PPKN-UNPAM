@@ -17,8 +17,8 @@ Aplikasi menggunakan *Client-Side Routing* untuk bernavigasi antar halaman secar
 | `/dosen/id` | `DaftarDosen` | Daftar Dosen (Versi Bahasa Indonesia) |
 | `/dosen/en` | `DaftarDosen` | Daftar Dosen (Versi Bahasa Inggris) |
 | `/visi-misi` | `VisiMisi` | Halaman Visi, Misi, dan Tujuan Prodi PPKn |
-| `/tentang-prodi/id` | `TentangProdiID` | Profil & Sejarah Prodi (Bahasa Indonesia) |
-| `/tentang-prodi/en` | `TentangProdiEN` | Profil & Sejarah Prodi (Bahasa Inggris) |
+| `/tentang-prodi/new/id` | `TentangProdiNewID` | Profil & Sejarah Prodi versi baru (Bahasa Indonesia) |
+| `/tentang-prodi/new/en` | `TentangProdiNewEN` | Profil & Sejarah Prodi versi baru (Bahasa Inggris) |
 
 ---
 
@@ -82,7 +82,7 @@ Merupakan komponen akar (*root component*) yang mengatur alur navigasi aplikasi 
 - Menggunakan `BrowserRouter` dan `Routes` untuk mendefinisikan seluruh rute URL.
 - Menangani pengalihan otomatis (`Navigate`) dari rute `/` dan `/dosen` ke `/dosen/id`.
 - Menyediakan rute dinamis `/dosen/:lang` untuk mendukung halaman dosen serbaguna (Bahasa Indonesia & Inggris).
-- Menghubungkan rute `/visi-misi` serta rute bahasa tentang prodi (`/tentang-prodi/id` dan `/tentang-prodi/en`).
+- Menghubungkan rute `/visi-misi` serta rute bahasa tentang prodi versi baru (`/tentang-prodi/new/id` dan `/tentang-prodi/new/en`).
 
 ### 2. `src/main.jsx`
 Merupakan titik masuk (*entry point*) React DOM:
