@@ -1,24 +1,49 @@
-# 🎓 UNPAM Website Prodi PPKn
+# 🎓 Website Prodi PPKn UNPAM
 
-Website portal informasi dan daftar dosen untuk **Program Studi Pendidikan Pancasila dan Kewarganegaraan (PPKn) Universitas Pamulang (UNPAM)**. Aplikasi ini dibangun menggunakan **React 19**, **Vite**, dan **React Router DOM v7** dengan dukungan tampilan bilingual (Bahasa Indonesia & Bahasa Inggris).
+Website portal informasi Program Studi Pendidikan Pancasila dan Kewarganegaraan (PPKn) Universitas Pamulang (UNPAM). Aplikasi ini dibangun menggunakan React 19, Vite, dan React Router DOM v7 dengan dukungan multi bahasa Indonesia dan Inggris.
 
 Website resmi institusi: [https://ppkn.unpam.ac.id](https://ppkn.unpam.ac.id)
 
 ---
 
-## 📌 Daftar Rute / Halaman (URL Matrix)
+## 📌 Ringkasan Proyek
 
-Aplikasi menggunakan *Client-Side Routing* untuk bernavigasi antar halaman secara instan tanpa *reload* halaman:
+Proyek ini berfungsi sebagai landing page dan portal informasi resmi prodi PPKn. Fungsinya tidak hanya menampilkan daftar dosen, tetapi juga menyediakan informasi mengenai:
+
+- profil prodi dan sejarah
+- visi, misi, dan tujuan
+- sambutan kaprodi
+- prestasi mahasiswa
+- FAQ dan informasi PMB
+- halaman daftar dosen bilingual
+
+---
+
+## 📍 Daftar Rute / Halaman (URL Matrix)
+
+Aplikasi menggunakan client-side routing untuk navigasi antar halaman tanpa reload.
 
 | Rute URL | Komponen Page | Deskripsi |
 | :--- | :--- | :--- |
-| `/` | `Navigate` | Redirect otomatis ke `/dosen/id` |
-| `/dosen` | `Navigate` | Redirect otomatis ke `/dosen/id` |
-| `/dosen/id` | `DaftarDosen` | Daftar Dosen (Versi Bahasa Indonesia) |
-| `/dosen/en` | `DaftarDosen` | Daftar Dosen (Versi Bahasa Inggris) |
-| `/visi-misi` | `VisiMisi` | Halaman Visi, Misi, dan Tujuan Prodi PPKn |
-| `/tentang-prodi/new/id` | `TentangProdiNewID` | Profil & Sejarah Prodi versi baru (Bahasa Indonesia) |
-| `/tentang-prodi/new/en` | `TentangProdiNewEN` | Profil & Sejarah Prodi versi baru (Bahasa Inggris) |
+| `/` | `Home` | Halaman utama / landing page prodi |
+| `/dosen` | `Navigate` | Redirect ke `/dosen/id` |
+| `/dosen/:lang` | `DaftarDosen` | Daftar dosen, mendukung `id` dan `en` |
+| `/visi-misi/id` | `VisiMisiID` | Visi, misi, dan tujuan (Bahasa Indonesia) |
+| `/visi-misi/en` | `VisiMisiEN` | Visi, misi, dan tujuan (Bahasa Inggris) |
+| `/tentang-prodi/id` | `TentangProdiID` | Profil prodi (Bahasa Indonesia) |
+| `/tentang-prodi/en` | `TentangProdiEN` | Profil prodi (Bahasa Inggris) |
+| `/tentang-prodi/new/id` | `TentangProdiNewID` | Profil & sejarah prodi versi baru (ID) |
+| `/tentang-prodi/new/en` | `TentangProdiNewEN` | Profil & sejarah prodi versi baru (EN) |
+| `/sambutan-kaprodi` | `SambutanKaprodi` | Sambutan kaprodi |
+| `/sambutan-kaprodi/:lang` | `SambutanKaprodi` | Sambutan kaprodi dengan varian bahasa |
+| `/prestasi-mahasiswa/id` | `PrestasiMahasiswaID` | Prestasi mahasiswa (ID) |
+| `/prestasi-mahasiswa/en` | `PrestasiMahasiswaEN` | Prestasi mahasiswa (EN) |
+| `/faq/id` | `FaqID` | FAQ (ID) |
+| `/faq/en` | `FaqEN` | FAQ (EN) |
+| `/pmb` | `Navigate` | Redirect ke `/pmb/id` |
+| `/pmb/id` | `PMB` | Informasi PMB (ID) |
+| `/pmb/en` | `PMBEN` | Informasi PMB (EN) |
+| `*` | `ErrorPage` | Halaman not found / fallback error |
 
 ---
 
@@ -26,51 +51,97 @@ Aplikasi menggunakan *Client-Side Routing* untuk bernavigasi antar halaman secar
 
 - **Framework & Tooling**: [React 19](https://react.dev/), [Vite 8](https://vite.dev/)
 - **Routing**: [React Router DOM v7](https://reactrouter.com/)
-- **Styling**: Vanilla CSS kustom (`CardDosen.css`, `TentangProdi.css`, `VisiMisi.css`, `index.css`)
-- **Fitur Utama**:
-  - 🌐 **Dukungan Dual Bahasa (ID / EN)** pada halaman Daftar Dosen dan Profil Prodi.
-  - 👨‍🏫 **Kartu Profil Dosen Dynamic**: Menampilkan nama lengkap, NIDN, NUPTK, riwayat pendidikan magister (S2) & doktor (S3), keahlian, serta tautan langsung ke PDDikti.
-  - 🖼️ **Fallback Foto Dosen Otomatis**: Jika foto dosen belum tersedia di aset, sistem secara otomatis memakai default icon (`icon.png`).
-  - 🚀 **Routing & Deployment Ready**: Siap didaftarkan ke Vercel (disertai `vercel.json` SPA rewrite) maupun GitHub Pages (`gh-pages`).
+- **Styling**: CSS kustom vanilla untuk setiap halaman dan komponen
+- **Build & Deployment**: Vite + support SPA routing untuk Vercel/GitHub Pages
+
+### Fitur utama
+
+- 🌐 **Dukungan bilingual (ID / EN)** di halaman dosen, profil prodi, PMB, FAQ, dan halaman lain yang relevan.
+- 👨‍🏫 **Daftar dosen dinamis** dengan data lengkap seperti NIDN, NUPTK, pendidikan S2/S3, bidang keahlian, dan tautan PDDikti.
+- 🖼️ **Fallback foto otomatis** ke `icon.png` jika foto dosen belum tersedia.
+- 🏠 **Landing page prodi** yang menyediakan navigasi cepat ke informasi penting.
+- 🧑‍🎓 **Halaman prestasi mahasiswa** untuk menampilkan capaian akademik dan non-akademik.
+- ❓ **FAQ interaktif** untuk menjawab pertanyaan umum calon mahasiswa atau publik.
+- 📚 **Halaman PMB** untuk informasi pendaftaran dan program studi.
+- 🚀 **Routing SPA siap deploy** dengan `vercel.json` dan `cp dist/index.html dist/404.html` untuk GitHub Pages.
 
 ---
 
-## 📁 Struktur Direktori & Penjelasan Kode
+## 📁 Struktur Direktori Proyek
 
 ```text
-PPKN-UNPAM/
-├── public/                 # Aset publik statis
+ppkn-dosen/
+├── public/                     # Aset publik statis
+│   └── 404.html
 ├── src/
-│   ├── assets/             # Gambar & foto dosen
-│   │   ├── icon.png        # Gambar ikon fallback
-│   │   ├── imageDosen/     # Foto-foto dosen prodi
-│   │   └── Prodi PPKn/     # Gambar pendukung prodi
-│   ├── components/         # Komponen UI reusable
-│   │   ├── CardDosen.jsx   # Kartu profil dosen
-│   │   └── CardDosen.css   # Styling kartu dosen
-│   ├── data/               # File sumber data statis
-│   │   ├── dosen-id.js     # Data dosen versi ID
-│   │   ├── dosen-en.js     # Data dosen versi EN
-│   │   └── fotoMap.js      # Utility mapping foto dosen
-│   ├── pages/              # Komponen halaman utama
-│   │   ├── daftarDosen/
-│   │   │   └── DaftarDosen.jsx
+│   ├── App.jsx                 # Konfigurasi routing utama
+│   ├── main.jsx                # Entry point React
+│   ├── index.css               # Global styling
+│   ├── assets/                 # Gambar, foto, dan aset visual
+│   │   ├── FAQ/
+│   │   ├── GedungdanFasilitasUNPAM/
+│   │   ├── Image dosen (Background hijau)/
+│   │   ├── imageDosen/
+│   │   ├── Prestasi Mahasiswa/
+│   │   ├── Prodi PPKn/
+│   │   └── icon.png
+│   ├── components/
+│   │   ├── CardDosen/
+│   │   │   ├── CardDosen.jsx
+│   │   │   └── CardDosen.css
+│   │   └── CardPrestasiMahasiswa/
+│   │       ├── CardPrestasiMahasiswa.jsx
+│   │       └── CardPrestasiMahasiswa.css
+│   ├── data/
+│   │   ├── dosen-id.js
+│   │   ├── dosen-en.js
+│   │   └── fotoMap.js
+│   ├── pages/
+│   │   ├── css/
+│   │   │   ├── Home.css
+│   │   │   ├── PMB.css
+│   │   │   ├── PrestasiMahasiswa.css
+│   │   │   ├── SambutanKaprodi.css
+│   │   │   ├── TentangProdi.css
+│   │   │   ├── TentangProdiNew.css
+│   │   │   └── VisiMisi.css
+│   │   ├── ErrorPage/
+│   │   │   ├── ErrorPage.jsx
+│   │   │   └── ErrorPage.css
+│   │   ├── faq/
+│   │   │   ├── FaqID.jsx
+│   │   │   └── FaqEN.jsx
+│   │   ├── Home/
+│   │   │   └── Home.jsx
+│   │   ├── PMB/
+│   │   │   ├── PMB.jsx
+│   │   │   └── PMB-EN.jsx
+│   │   ├── PrestasiMahasiswa/
+│   │   │   ├── PrestasiMahasiwa-ID.jsx
+│   │   │   └── PrestasiMahasiswa-EN.jsx
+│   │   ├── sambutanKaprodi/
+│   │   │   └── SambutanKaprodi.jsx
 │   │   ├── tentangProdi/
 │   │   │   ├── TentangProdi-ID.jsx
-│   │   │   └── tentangProdi-EN.jsx
+│   │   │   ├── TentangProdiNew-ID.jsx
+│   │   │   ├── tentangProdi-EN.jsx
+│   │   │   └── TentangProdiNew-EN.jsx
 │   │   ├── visiMisi/
-│   │   │   └── VisiMisi.jsx
-│   │   └── css/            # Style CSS untuk halaman
-│   │       ├── TentangProdi.css
-│   │       └── VisiMisi.css
-│   ├── App.jsx             # Konfigurasi Routing Utama
-│   ├── main.jsx            # Entry point utama React
-│   └── index.css           # Global CSS baseline
-├── eslint.config.js        # Konfigurasi ESLint
-├── index.html              # Template HTML utama Vite
-├── package.json            # Script & dependensi proyek
-├── vercel.json             # Rules rewrite Vercel SPA
-└── vite.config.js          # Konfigurasi Vite bundler
+│   │   │   ├── VisiMisi-ID.jsx
+│   │   │   └── VisiMisi-EN.jsx
+│   │   └── daftarDosen/
+│   │       └── DaftarDosen.jsx
+│   └── data/
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── tailwind.config.js
+├── vercel.json
+├── vite.config.js
+└── public/404.html
 ```
 
 ---
@@ -78,90 +149,138 @@ PPKN-UNPAM/
 ## 💻 Penjelasan Komponen & Modul Utama
 
 ### 1. `src/App.jsx`
-Merupakan komponen akar (*root component*) yang mengatur alur navigasi aplikasi menggunakan `react-router-dom`:
-- Menggunakan `BrowserRouter` dan `Routes` untuk mendefinisikan seluruh rute URL.
-- Menangani pengalihan otomatis (`Navigate`) dari rute `/` dan `/dosen` ke `/dosen/id`.
-- Menyediakan rute dinamis `/dosen/:lang` untuk mendukung halaman dosen serbaguna (Bahasa Indonesia & Inggris).
-- Menghubungkan rute `/visi-misi` serta rute bahasa tentang prodi versi baru (`/tentang-prodi/new/id` dan `/tentang-prodi/new/en`).
+Komponen root yang mengatur seluruh routing aplikasi. Beberapa fungsi utamanya:
 
-### 2. `src/main.jsx`
-Merupakan titik masuk (*entry point*) React DOM:
-- Mengaitkan elemen `#root` pada `index.html` dengan React root (`createRoot`).
-- Membungkus komponen `<App />` di dalam `<React.StrictMode>` untuk membantu mendeteksi masalah selama pengembangan.
-- Mengimpor file styling global `index.css`.
+- menyediakan `BrowserRouter`
+- mendefinisikan semua route halaman
+- mengarahkan `/` dan `/dosen` ke route default yang benar
+- mendukung pengaturan bahasa pada halaman dosen, visi misi, profil, PMB, FAQ, dan prestasi
 
-### 3. `src/components/CardDosen.jsx` & `CardDosen.css`
-Komponen UI untuk menampilkan informasi dosen secara individual:
-- **Props**: Menerima objek `dosen` dan string `lang` ('id' | 'en').
-- **Integrasi Foto**: Memanggil fungsi `getFotoDosen(dosen.id)` dari `fotoMap.js`.
-- **Render Berbasis Kondisi**: 
-  - Mengubah label keahlian dan jenjang pendidikan (*Expertise*, *Master's Degree*, *Doctoral Degree*) sesuai dengan parameter `lang`.
-  - Hanya menampilkan bagian S3 jika data `dosen.pendidikan.doktor` tidak bernilai `"-"`.
-  - Menampilkan tombol/link ke profil **PDDikti** jika URL PDDikti tersedia.
+### 2. `src/pages/Home/Home.jsx`
+Halaman utama yang berperan sebagai landing page prodi. Biasanya menampilkan informasi umum dan navigasi cepat ke topik utama seperti profil, dosen, PMB, dan prestasi.
 
-### 4. `src/pages/daftarDosen/DaftarDosen.jsx`
-Halaman kontainer daftar dosen:
-- Membaca parameter URL `:lang` melalui `useParams()`.
-- Melakukan validasi parameter `:lang`. Jika nilainya bukan `"id"` atau `"en"`, pengguna akan otomatis di-redirect kembali ke `/dosen/id`.
-- Secara dinamis memilih dataset yang sesuai (`dataDosenID` dari `dosen-id.js` atau `dataDosenEN` dari `dosen-en.js`).
-- Melakukan perulangan (`map`) pada dataset untuk me-render daftar `CardDosen`.
+### 3. `src/pages/daftarDosen/DaftarDosen.jsx`
+Halaman daftar dosen yang:
+
+- membaca parameter `:lang` dari URL
+- validasi bahasa (`id` atau `en`)
+- memilih dataset yang sesuai dari `dosen-id.js` atau `dosen-en.js`
+- menampilkan daftar dosen menggunakan komponen `CardDosen`
+
+### 4. `src/components/CardDosen/CardDosen.jsx`
+Komponen kartu profil dosen. Menampilkan:
+
+- nama dosen
+- NIDN dan NUPTK
+- pendidikan S2/S3
+- bidang keahlian
+- link ke PDDikti
+- foto dosen dengan fallback ke default icon
 
 ### 5. `src/data/fotoMap.js`
-Utility pengelola gambar dosen:
-- Mengimpor gambar-gambar dosen dari `src/assets/imageDosen/` sehingga bundler Vite dapat mengoptimalkan dan meng-hash nama file gambar.
-- Menyimpan pemetaan `id` dosen ke objek gambar.
-- Menyediakan fungsi `getFotoDosen(id)` yang akan mengembalikan gambar dosen terkait atau fallback ke `icon.png` jika gambar belum ada/tidak ditemukan.
+Utility mapping foto dosen ke ID dosen tertentu. Fungsinya untuk:
 
-### 6. `src/pages/visiMisi/VisiMisi.jsx` & `VisiMisi.css`
-Halaman yang menampilkan profil Visi, Misi (5 poin utama), dan Tujuan (5 poin utama) dari Program Studi PPKn Universitas Pamulang dengan tampilan card berbasis grid yang rapi.
+- menghubungkan data dosen dengan asset foto
+- menghindari error saat foto belum ada
+- menggunakan fallback `icon.png`
 
-### 7. `src/pages/tentangProdi/`
-- **`TentangProdi-ID.jsx`**: Profil lengkap prodi dalam Bahasa Indonesia mencakup Profil Singkat, Sejarah & Perjalanan, Akreditasi LAMDIK *"Baik Sekali"* (SK No. 562/SK/LAMDIK/Ak/S/XI/2022), serta Komitmen Ke Depan.
-- **`tentangProdi-EN.jsx`**: Terjemahan bahasa Inggris dari halaman profil prodi.
-- **`css/TentangProdi.css`**: Styling tata letak dan tipografi halaman profil prodi.
+### 6. `src/pages/tentangProdi/`
+Folder yang berisi halaman profil prodi, meliputi:
+
+- `TentangProdi-ID.jsx`
+- `TentangProdi-EN.jsx`
+- `TentangProdiNew-ID.jsx`
+- `TentangProdiNew-EN.jsx`
+
+Halaman ini mendeskripsikan sejarah, profil, akreditasi, dan komitmen prodi.
+
+### 7. `src/pages/visiMisi/`
+Folder yang berisi halaman visi, misi, dan tujuan prodi dalam dua versi bahasa.
+
+### 8. `src/pages/PMB/`
+Halaman pendaftaran mahasiswa baru. Menyajikan informasi program PMB dalam format ID dan EN.
+
+### 9. `src/pages/faq/`
+Halaman FAQ bilingual yang berisi informasi umum seputar prodi dan pendaftaran.
+
+### 10. `src/pages/PrestasiMahasiswa/`
+Halaman prestasi mahasiswa yang menampilkan pencapaian dan highlight mahasiswa PPKn.
+
+### 11. `src/pages/sambutanKaprodi/`
+Halaman sambutan kaprodi, berfungsi sebagai penyampaian profil dan visi dari pimpinan program studi.
+
+### 12. `src/pages/ErrorPage/ErrorPage.jsx`
+Halaman fallback untuk route yang tidak ditemukan.
 
 ---
 
 ## 🚀 Cara Menjalankan Proyek di Lokal
 
 ### Prasyarat
-- [Node.js](https://nodejs.org/) (Versi 18 ke atas disarankan)
+
+- [Node.js](https://nodejs.org/) (versi 18+ disarankan)
 - npm atau pnpm
 
-### Langkah-Langkah
+### Langkah-langkah
 
-1. **Clone repository ini**:
+1. Clone repository:
+
    ```bash
    git clone https://github.com/octavium2000/ppkn-dosen.git
-   cd PPKN-UNPAM
+   cd ppkn-dosen
    ```
 
-2. **Install dependensi proyek**:
+2. Install dependency:
+
    ```bash
    npm install
    ```
 
-3. **Jalankan server pengembangan (Dev Server)**:
+3. Jalankan server pengembangan:
+
    ```bash
    npm run dev
    ```
-   Buka URL lokal yang ditunjukkan di terminal (biasanya `http://localhost:5173`).
 
-4. **Build untuk Produksi**:
+   Vite default menggunakan port `3000` pada proyek ini, jadi URL yang biasanya dibuka adalah:
+
+   ```text
+   http://localhost:3000
+   ```
+
+4. Build untuk produksi:
+
    ```bash
    npm run build
    ```
-   Hasil build siap deploy akan dibuat pada folder `dist/`.
 
-5. **Deploy ke GitHub Pages**:
+   Hasil build akan dibuat di folder `dist/`.
+
+5. Preview build hasil produksi:
+
+   ```bash
+   npm run preview
+   ```
+
+6. Deploy ke GitHub Pages (opsional):
+
    ```bash
    npm run deploy
    ```
 
 ---
 
-## 🌐 Konfigurasi Deployment (Vercel & SPA Routing)
+## 🌐 Konfigurasi Deployment
 
-Proyek ini dikonfigurasi agar mendukung *Client-Side Routing* saat di-deploy:
-- **`vercel.json`**: Menyediakan aturan *rewrite* semua rute URL ke `/index.html` agar rute seperti `/visi-misi` atau `/dosen/en` tidak menghasilkan error 404 pada Vercel.
-- **`package.json` (Script Build)**: Menjalankan `cp dist/index.html dist/404.html` saat `npm run build` untuk menangani rute GitHub Pages SPA.
+Proyek ini dikonfigurasi agar support client-side routing saat dideploy:
+
+- `vercel.json` mengarahkan semua route ke `index.html` agar tidak menghasilkan 404 pada saat SPA routing.
+- script build menjalankan `cp dist/index.html dist/404.html` untuk kebutuhan fallback saat deploy ke GitHub Pages.
+
+**Catatan**: route seperti `/dosen/en`, `/visi-misi/id`, dan `/pmb/id` akan tetap berfungsi di deployment karena konfigurasi rewrite dan fallback diatur dengan benar.
+
+---
+
+## ✅ Status Proyek
+
+Proyek ini siap digunakan sebagai portal web informasi Program Studi PPKn UNPAM dengan struktur modular, bilingual support, dan routing yang cukup lengkap untuk kebutuhan landing page serta publikasi informasi akademik.
