@@ -1,241 +1,410 @@
-/* =========================================================
-   VISI MISI — Theme: Formal Minimalist, dengan bobot lebih
-   Tetap tanpa box/card, tapi tipografi lebih tebal, garis
-   lebih kuat, dan angka diberi penanda visual yang lebih hadir.
-   ========================================================= */
-:root {
-  --vm-bg: #faf8f4;
-  --vm-ink: #17140f;
-  --vm-ink-soft: #453f38;
-  --vm-maroon: #6b0808;
-  --vm-maroon-deep: #4a0505;
-  --vm-maroon-tint: rgba(107, 8, 8, 0.07);
-  --vm-line: rgba(23, 20, 15, 0.22);
-  --vm-line-soft: rgba(23, 20, 15, 0.14);
-}
+/* ==========================================================================
+   VisiMisi.css
+   Halaman Visi & Misi — Prodi PPKn Universitas Pamulang
+   Semua selector berprefix "vmp-" agar tidak bentrok dengan CSS lain.
+   ========================================================================== */
 
-/* ---------- Section shell ---------- */
-.visi-misi {
-  position: relative;
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 5rem 1.5rem 4.5rem;
-  color: var(--vm-ink);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--vm-bg);
-  font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
-}
+   @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
-/* ---------- Header ---------- */
-.visi-misi-header {
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-
-.visi-misi-eyebrow {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: var(--vm-maroon);
-  text-transform: uppercase;
-}
-
-.visi-misi-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 2.65rem;
-  font-weight: 700;
-  color: var(--vm-ink);
-  margin-top: 0.75rem;
-  letter-spacing: 0.005em;
-}
-
-/* Garis lebih tebal & lebih panjang — lebih "hadir" */
-.visi-misi-divider {
-  width: 64px;
-  height: 4px;
-  background-color: var(--vm-maroon);
-  margin: 1.5rem auto 0;
-  border-radius: 0;
-}
-
-/* ---------- Visi — dibatasi garis tegas, bukan box ---------- */
-.visi-card {
-  background-color: transparent;
-  padding: 2.75rem 1rem;
-  margin-bottom: 4rem;
-  text-align: center;
-  max-width: 42rem;
-  width: 100%;
-  border-top: 3px solid var(--vm-maroon);
-  border-bottom: 3px solid var(--vm-maroon);
-  box-shadow: none;
-  border-radius: 0;
-  cursor: default;
-}
-
-.visi-label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--vm-maroon);
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  margin-bottom: 1.25rem;
-}
-
-.visi-quote {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--vm-ink);
-  line-height: 1.8;
-  font-style: italic;
-}
-
-@media (min-width: 768px) {
-  .visi-quote {
-    font-size: 1.5rem;
-  }
-}
-
-/* ---------- Misi & Tujuan — list dengan bobot lebih ---------- */
-.misi-section,
-.tujuan-section {
-  max-width: 42rem;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.tujuan-section {
-  margin-top: 3.5rem;
-}
-
-.misi-title,
-.tujuan-title {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--vm-maroon);
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  text-align: left;
-  margin-bottom: 0;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid var(--vm-ink);
-}
-
-.misi-grid,
-.tujuan-grid {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Setiap item: garis lebih tegas + padding lebih besar supaya lebih "berisi" */
-.misi-card,
-.tujuan-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1.85rem 0;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid var(--vm-line);
-  border-radius: 0;
-  box-shadow: none;
-  transition: padding-left 0.25s ease, background-color 0.25s ease;
-}
-
-.misi-grid > .misi-card:last-child,
-.tujuan-grid > .tujuan-card:last-child {
-  border-bottom: none;
-}
-
-.misi-card:hover,
-.tujuan-card:hover {
-  padding-left: 0.75rem;
-  background-color: var(--vm-maroon-tint);
-}
-
-/* Angka jadi penanda visual: lingkaran solid maroon, bukan teks tipis */
-.misi-number,
-.tujuan-number {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #fff;
-  background-color: var(--vm-maroon);
-  flex-shrink: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.misi-card:hover .misi-number,
-.tujuan-card:hover .tujuan-number {
-  background-color: var(--vm-maroon-deep);
-  transform: scale(1.06);
-}
-
-.misi-text,
-.tujuan-text {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--vm-ink-soft);
-  line-height: 1.75;
-  flex: 1;
-  padding-top: 0.35rem;
-}
-
-/* ===========================
-   Responsive
-   =========================== */
-@media (max-width: 768px) {
-  .visi-misi {
-    padding: 3.5rem 1.25rem 3rem;
-  }
-
-  .visi-misi-title {
-    font-size: 2rem;
-  }
-
-  .visi-card {
-    padding: 2.25rem 0;
-    margin-bottom: 3rem;
-  }
-
-  .visi-quote {
-    font-size: 1.1rem;
-  }
-
-  .misi-card,
-  .tujuan-card {
-    gap: 1rem;
-    padding: 1.5rem 0;
-  }
-
-  .misi-number,
-  .tujuan-number {
-    width: 2.1rem;
-    height: 2.1rem;
-    font-size: 0.95rem;
-  }
-
-  .misi-text,
-  .tujuan-text {
-    font-size: 0.92rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .visi-misi-title {
-    font-size: 1.7rem;
-  }
-
-  .visi-quote {
-    font-size: 1rem;
-  }
-}
+   /* ---------- Section & Container ---------- */
+   .vmp-section {
+     --vmp-ink: #2a1c17;
+     --vmp-body: #5c4b44;
+     --vmp-muted: #7d6b64;
+     --vmp-accent: #350f08;
+     --vmp-accent-2: #5a2418;
+     --vmp-accent-soft: #f6e7e1;
+     --vmp-card: #ffffff;
+     --vmp-border: #e7dbd4;
+     --vmp-radius: 20px;
+     --vmp-shadow: 0 14px 34px -18px rgba(22, 35, 63, 0.25);
+   
+     position: relative;
+     overflow: hidden;
+     padding: 88px 24px 104px;
+     background: linear-gradient(180deg, #fbf7f5 0%, #f3ebe7 100%);
+     color: var(--vmp-ink);
+     font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+       "Segoe UI", Roboto, sans-serif;
+   }
+   
+   .vmp-section *,
+   .vmp-section *::before,
+   .vmp-section *::after {
+     box-sizing: border-box;
+   }
+   
+   /* Dekorasi latar (blob lembut di dua sudut) */
+   .vmp-section::before,
+   .vmp-section::after {
+     content: "";
+     position: absolute;
+     border-radius: 50%;
+     pointer-events: none;
+     z-index: 0;
+   }
+   
+   /* .vmp-section::before {
+     width: 480px;
+     height: 480px;
+     top: -220px;
+     right: -160px;
+     background: radial-gradient(circle, rgba(53, 15, 8, 0.10), transparent 65%);
+   }
+   
+   .vmp-section::after {
+     width: 520px;
+     height: 520px;
+     bottom: -260px;
+     left: -200px;
+     background: radial-gradient(circle, rgba(90, 36, 24, 0.08), transparent 65%);
+   } */
+   
+   .vmp-container {
+     position: relative;
+     z-index: 1;
+     max-width: 1080px;
+     margin: 0 auto;
+   }
+   
+   /* ---------- Header ---------- */
+   .vmp-header {
+     max-width: 720px;
+     margin: 0 auto 56px;
+     text-align: center;
+     animation: vmpRise 0.7s ease both;
+   }
+   
+   .vmp-eyebrow {
+     display: inline-flex;
+     align-items: center;
+     gap: 8px;
+     padding: 8px 18px;
+     border-radius: 999px;
+     background: var(--vmp-card);
+     border: 1px solid var(--vmp-border);
+     box-shadow: var(--vmp-shadow);
+     font-size: 0.72rem;
+     font-weight: 700;
+     letter-spacing: 0.18em;
+     text-transform: uppercase;
+     color: var(--vmp-accent);
+   }
+   
+   .vmp-eyebrow::before {
+     content: "";
+     width: 7px;
+     height: 7px;
+     border-radius: 50%;
+     background: var(--vmp-accent);
+   }
+   
+   .vmp-title {
+     margin: 20px 0 0;
+     font-size: clamp(2.1rem, 5vw, 3.2rem);
+     font-weight: 800;
+     letter-spacing: -0.02em;
+     line-height: 1.15;
+   }
+   
+   .vmp-title-accent {
+     color: var(--vmp-accent);
+     background: linear-gradient(120deg, #350f08, #5a2418);
+     -webkit-background-clip: text;
+     background-clip: text;
+     -webkit-text-fill-color: transparent;
+   }
+   
+   .vmp-subtitle {
+     margin: 14px auto 0;
+     max-width: 560px;
+     font-size: 1rem;
+     font-weight: 500;
+     line-height: 1.7;
+     color: var(--vmp-muted);
+   }
+   
+   /* ---------- Kartu Visi ---------- */
+   .vmp-visi {
+     position: relative;
+     overflow: hidden;
+     border-radius: 26px;
+     padding: clamp(32px, 5vw, 60px);
+     background: radial-gradient(
+         560px 260px at 88% -20%,
+         rgba(90, 36, 24, 0.35),
+         transparent 62%
+       ),
+       linear-gradient(135deg, #1f0d07 0%, #2c130b 55%, #3c1c10 100%);
+     color: #ffffff;
+     box-shadow: 0 34px 64px -32px rgba(31, 13, 7, 0.55);
+     animation: vmpRise 0.7s 0.1s ease both;
+   }
+   
+   /* Ring dekoratif */
+   .vmp-visi::before {
+     content: "";
+     position: absolute;
+     top: -110px;
+     right: -80px;
+     width: 300px;
+     height: 300px;
+     border: 1.5px solid rgba(255, 255, 255, 0.14);
+     border-radius: 50%;
+   }
+   
+   /* Tanda kutip raksasa */
+   .vmp-visi::after {
+     content: "\201C";
+     position: absolute;
+     right: 28px;
+     bottom: -90px;
+     font-family: Georgia, "Times New Roman", serif;
+     font-size: 300px;
+     line-height: 1;
+     color: rgba(255, 255, 255, 0.07);
+     pointer-events: none;
+   }
+   
+   .vmp-visi-badge {
+     position: relative;
+     z-index: 1;
+     display: inline-flex;
+     align-items: center;
+     padding: 8px 18px;
+     border-radius: 999px;
+     background: linear-gradient(120deg, var(--vmp-accent), var(--vmp-accent-2));
+     color: #fff3e2;
+     font-size: 0.72rem;
+     font-weight: 800;
+     letter-spacing: 0.22em;
+     text-transform: uppercase;
+     box-shadow: 0 10px 22px -10px rgba(53, 15, 8, 0.6);
+   }
+   
+   .vmp-quote {
+     position: relative;
+     z-index: 1;
+     margin: 26px 0 0;
+     max-width: 62ch;
+     font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+     font-weight: 500;
+     line-height: 1.8;
+     color: rgba(255, 255, 255, 0.95);
+   }
+   
+   .vmp-quote-hl {
+     color: #f6e7e1;
+     font-weight: 700;
+     font-style: normal;
+   }
+   
+   /* ---------- Blok Section (Nilai / Misi / Tujuan) ---------- */
+   .vmp-block {
+     margin-top: 72px;
+     animation: vmpRise 0.7s 0.2s ease both;
+   }
+   
+   .vmp-block-head {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: baseline;
+     gap: 8px 18px;
+     margin-bottom: 26px;
+   }
+   
+   .vmp-block-title {
+     position: relative;
+     margin: 0;
+     padding-left: 20px;
+     font-size: clamp(1.5rem, 3vw, 1.9rem);
+     font-weight: 800;
+     letter-spacing: -0.01em;
+   }
+   
+   .vmp-block-title::before {
+     content: "";
+     position: absolute;
+     left: 0;
+     top: 12%;
+     bottom: 12%;
+     width: 7px;
+     border-radius: 999px;
+     background: linear-gradient(180deg, var(--vmp-accent), var(--vmp-accent-2));
+   }
+   
+   .vmp-block-desc {
+     margin: 0;
+     font-size: 0.92rem;
+     font-weight: 500;
+     color: var(--vmp-muted);
+   }
+   
+   /* ---------- Grid Nilai Utama ---------- */
+   .vmp-values-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+     gap: 16px;
+   }
+   
+   .vmp-value-card {
+     position: relative;
+     overflow: hidden;
+     background: var(--vmp-card);
+     border: 1px solid var(--vmp-border);
+     border-radius: var(--vmp-radius);
+     padding: 26px 20px;
+     text-align: center;
+     transition: transform 0.25s ease, box-shadow 0.25s ease,
+       border-color 0.25s ease;
+   }
+   
+   .vmp-value-card::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 4px;
+     background: linear-gradient(90deg, var(--vmp-accent), var(--vmp-accent-2));
+     transform: scaleX(0);
+     transform-origin: left;
+     transition: transform 0.3s ease;
+   }
+   
+   .vmp-value-card:hover {
+     transform: translateY(-4px);
+     border-color: rgba(53, 15, 8, 0.35);
+     box-shadow: var(--vmp-shadow);
+   }
+   
+   .vmp-value-card:hover::before {
+     transform: scaleX(1);
+   }
+   
+   .vmp-value-dot {
+     display: inline-block;
+     width: 10px;
+     height: 10px;
+     margin-bottom: 14px;
+     border-radius: 50%;
+     background: linear-gradient(120deg, var(--vmp-accent), var(--vmp-accent-2));
+     box-shadow: 0 0 0 5px var(--vmp-accent-soft);
+   }
+   
+   .vmp-value-title {
+     margin: 0 0 8px;
+     font-size: 0.98rem;
+     font-weight: 800;
+     color: var(--vmp-ink);
+   }
+   
+   .vmp-value-desc {
+     margin: 0;
+     font-size: 0.84rem;
+     line-height: 1.65;
+     color: var(--vmp-muted);
+   }
+   
+   /* ---------- Daftar Misi & Tujuan ---------- */
+   .vmp-list {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     display: grid;
+     gap: 14px;
+   }
+   
+   .vmp-item {
+     display: flex;
+     align-items: flex-start;
+     gap: 20px;
+     background: var(--vmp-card);
+     border: 1px solid var(--vmp-border);
+     border-radius: var(--vmp-radius);
+     padding: 20px 24px;
+     transition: transform 0.25s ease, box-shadow 0.25s ease,
+       border-color 0.25s ease;
+   }
+   
+   .vmp-item:hover {
+     transform: translateY(-3px);
+     border-color: rgba(53, 15, 8, 0.35);
+     box-shadow: var(--vmp-shadow);
+   }
+   
+   .vmp-number {
+     flex-shrink: 0;
+     display: grid;
+     place-items: center;
+     width: 52px;
+     height: 52px;
+     border-radius: 16px;
+     background: linear-gradient(135deg, var(--vmp-accent), var(--vmp-accent-2));
+     color: #ffffff;
+     font-size: 0.95rem;
+     font-weight: 800;
+     letter-spacing: 0.04em;
+     box-shadow: 0 12px 22px -12px rgba(53, 15, 8, 0.7);
+   }
+   
+   .vmp-text {
+     margin: 4px 0 0;
+     font-size: 0.98rem;
+     line-height: 1.75;
+     color: var(--vmp-body);
+   }
+   
+   /* ---------- Animasi ---------- */
+   @keyframes vmpRise {
+     from {
+       opacity: 0;
+       transform: translateY(20px);
+     }
+     to {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+   
+   /* ---------- Responsive ---------- */
+   @media (max-width: 768px) {
+     .vmp-section {
+       padding: 64px 18px 80px;
+     }
+   
+     .vmp-header {
+       margin-bottom: 44px;
+     }
+   
+     .vmp-block {
+       margin-top: 56px;
+     }
+   
+     .vmp-item {
+       padding: 18px;
+       gap: 14px;
+     }
+   
+     .vmp-number {
+       width: 44px;
+       height: 44px;
+       border-radius: 13px;
+       font-size: 0.85rem;
+     }
+   
+     .vmp-visi::after {
+       font-size: 200px;
+       bottom: -60px;
+     }
+   }
+   
+   /* ---------- Aksesibilitas ---------- */
+   @media (prefers-reduced-motion: reduce) {
+     .vmp-section *,
+     .vmp-section *::before,
+     .vmp-section *::after {
+       animation: none !important;
+       transition: none !important;
+     }
+   }
