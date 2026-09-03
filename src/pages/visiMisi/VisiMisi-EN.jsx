@@ -66,7 +66,7 @@ const VisiMisiEN = () => {
             Vision <span className="vmp-title-accent">&amp;</span> Mission
           </h1>
           <p className="vmp-subtitle">
-            Pancasila and Civic Education Study Program · Universitas Pamulang
+            Pancasila and Civic Education Study Program
           </p>
         </header>
 

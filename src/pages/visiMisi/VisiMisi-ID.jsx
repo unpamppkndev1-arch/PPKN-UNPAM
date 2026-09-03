@@ -71,8 +71,7 @@ const VisiMisiID = () => {
             Visi <span className="vmp-title-accent">&amp;</span> Misi
           </h1>
           <p className="vmp-subtitle">
-            Program Studi Pendidikan Pancasila dan Kewarganegaraan · Universitas
-            Pamulang
+            Program Studi Pendidikan Pancasila dan Kewarganegaraan
           </p>
         </header>
 
