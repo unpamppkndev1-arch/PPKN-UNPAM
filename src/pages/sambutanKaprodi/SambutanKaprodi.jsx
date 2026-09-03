@@ -1,16 +1,17 @@
-import React from "react";
-import { useEffect, useState, useCallback, useRef } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import ichwaniPhoto from "../../assets/Bu_ichwani_with_text.webp";
 import "../css/SambutanKaprodi.css";
 
-function SambutanKaprodi() {
+export default function SambutanKaprodi() {
   const containerRef = useRef(null);
   const [data, setData] = useState(null);
 
-  const linked = () =>{
-    window.open("https://pddikti.kemdiktisaintek.go.id/detail-dosen/J4SIYB5CSWZfyLLCNbiHaom8wtBpm2ielGPhaiIU5HFesHiKNUQVpIqucj8SswoLxdUBTQ==", "_blank");
-  }
-
+  const linked = () => {
+    window.open(
+      "https://pddikti.kemdiktisaintek.go.id/detail-dosen/J4SIYB5CSWZfyLLCNbiHaom8wtBpm2ielGPhaiIU5HFesHiKNUQVpIqucj8SswoLxdUBTQ==",
+      "_blank"
+    );
+  };
 
   const kirimTinggi = useCallback(() => {
     const tinggi = document.documentElement.scrollHeight;
@@ -20,7 +21,6 @@ function SambutanKaprodi() {
   }, []);
 
   useEffect(() => {
-    // Data Kaprodi statis (ID/EN)
     setData({
       id: {
         nama: "Dr. Ichwani Siti Utami, S.Pd., M.H",
@@ -85,54 +85,106 @@ function SambutanKaprodi() {
   const bahasa = window.location.pathname.includes("/en") ? "en" : "id";
   const content = data?.[bahasa];
 
-  if (!content) return <p>Memuat...</p>;
+  if (!content) return <p className="sambutan-loading">Memuat...</p>;
 
   return (
-    <section className="sambutan-kaprodi" ref={containerRef}>
+    <section className="sambutan" ref={containerRef}>
+      <span className="sambutan-bg-word" aria-hidden="true">
+        {bahasa === "en" ? "Welcome" : "Sambutan"}
+      </span>
+
       <header className="sambutan-header">
-        <p className="sambutan-eyebrow">
+        <p className="sambutan-eyebrow" data-animate style={{ animationDelay: "0ms" }}>
+          <span className="sambutan-eyebrow-line" aria-hidden="true" />
           {bahasa === "en" ? "Foreword" : "Sambutan"}
+          <span className="sambutan-eyebrow-line" aria-hidden="true" />
         </p>
-        <h1 className="sambutan-title">
-          {bahasa === "en" ? "Head of Program's Welcome" : "Sambutan Ketua Program Studi"}
+
+        <h1 className="sambutan-title" data-animate style={{ animationDelay: "80ms" }}>
+          {bahasa === "en" ? (
+            <>Head of Program’s <em>Welcome</em></>
+          ) : (
+            <><em>Sambutan</em> Ketua Program Studi</>
+          )}
         </h1>
-        <div className="sambutan-divider" />
+
+        <p className="sambutan-subtitle" data-animate style={{ animationDelay: "160ms" }}>
+          {bahasa === "en"
+            ? "Pancasila and Civic Education Study Program · Faculty of Teacher Training and Education, Universitas Pamulang"
+            : "Pendidikan Pancasila dan Kewarganegaraan · Fakultas Keguruan dan Ilmu Pendidikan, Universitas Pamulang"}
+        </p>
+
+        <div className="sambutan-divider" data-animate style={{ animationDelay: "220ms" }} aria-hidden="true">
+          <span /><i /><span />
+        </div>
       </header>
 
-      <div className="sambutan-photo-wrapper">
-        <img
-          src={ichwaniPhoto}
-          alt={content.nama}
-          className="sambutan-photo"
-          onLoad={kirimTinggi}
-        />
-      </div>
+      <div className="sambutan-grid">
+        <aside className="sambutan-card-col" data-animate style={{ animationDelay: "280ms" }}>
+          <figure className="sambutan-card">
+            <div className="sambutan-photo-wrap">
+              <img
+                src={ichwaniPhoto}
+                alt={content.nama}
+                className="sambutan-photo"
+                onLoad={kirimTinggi}
+              />
 
-      <div className="sambutan-identity">
-        <h2 className="sambutan-name">{content.nama}</h2>
-        <button className="sambutan-role" onClick={linked}>
-          {content.jabatan}
-        </button>
-      </div>
+              <span className="sambutan-quote-badge" aria-hidden="true">“</span>
+            </div>
 
-      <div className="sambutan-paragraphs">
-        {content.paragraf.map((p, i) => {
-          const isFirst = i === 0;
-          const isLast = i === content.paragraf.length - 1;
-          const cls = isFirst
-            ? "sambutan-paragraph sambutan-paragraph--lead"
-            : isLast
-            ? "sambutan-paragraph sambutan-paragraph--closing"
-            : "sambutan-paragraph";
-          return (
-            <p key={i} className={cls}>
-              {p}
-            </p>
-          );
-        })}
+            <figcaption className="sambutan-card-body">
+              <h2 className="sambutan-name">{content.nama}</h2>
+              <button type="button" className="sambutan-role" onClick={linked}>
+                {content.jabatan}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </button>
+            </figcaption>
+          </figure>
+
+          <p className="sambutan-chip">
+            <span className="sambutan-chip-dot" aria-hidden="true" />
+            {bahasa === "en"
+              ? <>Accredited “Excellent” — LAMDIK 2022</>
+              : <>Akreditasi “Baik Sekali” — LAMDIK 2022</>}
+          </p>
+        </aside>
+
+        <article className="sambutan-content">
+          {content.paragraf.map((p, i) => {
+            const isLast = i === content.paragraf.length - 1;
+            let cls = "sambutan-paragraph";
+            if (i <= 1) cls += " sambutan-paragraph--greeting";
+            else if (i === 2) cls += " sambutan-paragraph--dropcap";
+            else if (i === 3) cls += " sambutan-paragraph--highlight";
+            if (isLast) cls += " sambutan-paragraph--closing";
+            return (
+              <p
+                key={i}
+                className={cls}
+                data-animate
+                style={{ animationDelay: `${340 + i * 70}ms` }}
+              >
+                {p}
+              </p>
+            );
+          })}
+
+          <div
+            className="sambutan-signature"
+            data-animate
+            style={{ animationDelay: `${340 + content.paragraf.length * 70}ms` }}
+          >
+            <span className="sambutan-sign-rule" aria-hidden="true" />
+            <p className="sambutan-sign-name">{content.nama}</p>
+            <p className="sambutan-sign-role">{content.jabatan}</p>
+          </div>
+        </article>
       </div>
     </section>
   );
 }
-
-export default SambutanKaprodi;
