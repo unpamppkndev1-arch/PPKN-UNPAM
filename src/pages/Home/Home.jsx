@@ -29,11 +29,11 @@ const routes = [
         path: "/sambutan-kaprodi/en",
         lang: "en",
       },
-      { label: "Prestasi Mahasiswa", path: "/prestasi-mahasiswa/id", lang: id },
+      { label: "Prestasi Mahasiswa", path: "/prestasi-mahasiswa/id", lang: "id" },
       {
         label: "Student Accomplishment",
         path: "/prestasi-mahasiswa/en",
-        lang: en,
+        lang: "en",
       },
       { label: "FAQ", path: "/faq/id", lang: "id" },
       { label: "FAQ", path: "/faq/en", lang: "en" },
