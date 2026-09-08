@@ -1,27 +1,11 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import ichwaniPhoto from "../../assets/Bu_ichwani_with_text.webp";
 import "../css/SambutanKaprodi.css";
 
 export default function SambutanKaprodi() {
   const containerRef = useRef(null);
-  const [data, setData] = useState(null);
+  const [data] = useState({
 
-  const linked = () => {
-    window.open(
-      "https://pddikti.kemdiktisaintek.go.id/detail-dosen/J4SIYB5CSWZfyLLCNbiHaom8wtBpm2ielGPhaiIU5HFesHiKNUQVpIqucj8SswoLxdUBTQ==",
-      "_blank"
-    );
-  };
-
-  const kirimTinggi = useCallback(() => {
-    const tinggi = document.documentElement.scrollHeight;
-    if (window.parent !== window) {
-      window.parent.postMessage({ tinggi }, "*");
-    }
-  }, []);
-
-  useEffect(() => {
-    setData({
       id: {
         nama: "Dr. Ichwani Siti Utami, S.Pd., M.H",
         jabatan: "Ketua Program Studi",
@@ -51,13 +35,20 @@ export default function SambutanKaprodi() {
         ],
       },
     });
-  }, []);
 
-  useEffect(() => {
-    if (data) {
-      requestAnimationFrame(() => requestAnimationFrame(kirimTinggi));
+  const linked = () => {
+    window.open(
+      "https://pddikti.kemdiktisaintek.go.id/detail-dosen/J4SIYB5CSWZfyLLCNbiHaom8wtBpm2ielGPhaiIU5HFesHiKNUQVpIqucj8SswoLxdUBTQ==",
+      "_blank"
+    );
+  };
+
+  const kirimTinggi = useCallback(() => {
+    const tinggi = document.documentElement.scrollHeight;
+    if (window.parent !== window) {
+      window.parent.postMessage({ tinggi }, "*");
     }
-  }, [data, kirimTinggi]);
+  }, []);
 
   useEffect(() => {
     if (!containerRef.current) return;

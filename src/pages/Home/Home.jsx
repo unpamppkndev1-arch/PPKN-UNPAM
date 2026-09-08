@@ -85,7 +85,7 @@ function Home() {
       </section>
 
       <section className="home-grid">
-        {filteredGroups.map((group, idx) => (
+        {filteredGroups.map((group) => (
           <article key={group.group} className="home-card">
             <header className="home-card-header">
               <h2>{group.group}</h2>

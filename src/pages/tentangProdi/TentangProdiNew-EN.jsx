@@ -1,4 +1,3 @@
-import react from "react";
 import '../css/TentangProdiNew.css';
 
 import unnpam from "../../assets/GedungdanFasilitasUNPAM/Pendidikan_Pancasila_dan_Kewarganegaraan.jpg"

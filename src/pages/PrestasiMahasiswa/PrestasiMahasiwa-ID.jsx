@@ -1,4 +1,3 @@
-import React from "react";
 import CardPrestasiMahawasiwa from "../../components/CardPrestasiMahasiswa/CardPrestasiMahasiswa";
 import '../css/PrestasiMahasiswa.css';
 import GambarLomba1 from "../../assets/Prestasi Mahasiswa/Selamat dan sukses.webp";
