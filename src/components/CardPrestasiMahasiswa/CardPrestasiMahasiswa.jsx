@@ -15,7 +15,7 @@ const CardPrestasiMahawasiwa = ({ gambarLomba, juara, katagoriSubjek, tingkatLom
                 <h2>{tingkatLomba}</h2>
             </div>
         </div>
-        <button className="next-info">Info Selengkapnya</button>
+        <button type="button" className="next-info">Info Selengkapnya</button>
     </div>
   );
 }
