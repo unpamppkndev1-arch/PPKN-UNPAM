@@ -29,7 +29,12 @@ const routes = [
         path: "/sambutan-kaprodi/en",
         lang: "en",
       },
-      { label: "Prestasi Mahasiswa", path: "/prestasi-mahasiswa" },
+      { label: "Prestasi Mahasiswa", path: "/prestasi-mahasiswa/id", lang: "id" },
+      {
+        label: "Student Accomplishment",
+        path: "/prestasi-mahasiswa/en",
+        lang: "en",
+      },
       { label: "FAQ", path: "/faq/id", lang: "id" },
       { label: "FAQ", path: "/faq/en", lang: "en" },
       { label: "PMB", path: "/pmb/id", lang: "id" },
@@ -80,7 +85,7 @@ function Home() {
       </section>
 
       <section className="home-grid">
-        {filteredGroups.map((group, idx) => (
+        {filteredGroups.map((group) => (
           <article key={group.group} className="home-card">
             <header className="home-card-header">
               <h2>{group.group}</h2>

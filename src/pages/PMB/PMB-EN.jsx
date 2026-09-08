@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../css/PMB.css";
 import Gambar from "../../assets/image-removebg-preview.webp";
 
