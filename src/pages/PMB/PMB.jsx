@@ -274,8 +274,8 @@ const waves = [
   {
     id: 4,
     date: "Gelombang 4",
-    status: "open",
-    statusLabel: "Dibuka",
+    status: "closed",
+    statusLabel: "Ditutup",
     title: "Pendaftaran Gelombang 4",
     wave: "Gelombang 4",
   },
