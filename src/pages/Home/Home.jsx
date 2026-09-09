@@ -11,8 +11,6 @@ const routes = [
       { label: "Lecturers", path: "/dosen/en", lang: "en" },
       { label: "Visi & Misi", path: "/visi-misi/id", lang: "id" },
       { label: "Vision & Mission", path: "/visi-misi/en", lang: "en" },
-      { label: "Tentang Program Studi", path: "/tentang-prodi/id", lang: "id" },
-      { label: "About Study Program", path: "/tentang-prodi/en", lang: "en" },
       {
         label: "Tentang Program Studi (Baru)",
         path: "/tentang-prodi/new/id",
