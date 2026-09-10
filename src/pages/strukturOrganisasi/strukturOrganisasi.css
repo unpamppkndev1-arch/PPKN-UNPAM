@@ -238,10 +238,29 @@ body {
 }
 
 .so-avatar--sm {
-  width: 42px;
-  height: 42px;
-  font-size: 0.76rem;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px rgba(201, 150, 46, 0.45);
+  width: 52px;
+  height: 52px;
+  font-size: 0.92rem;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(201, 150, 46, 0.55);
+}
+
+.so-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.so-avatar--photo {
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.so-avatar--photo .so-avatar-image {
+  transform: scale(1.12);
+  transform-origin: center;
 }
 
 .so-trunk {
