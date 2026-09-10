@@ -22,14 +22,17 @@ import PMBEN from "./pages/PMB/PMB-EN";
 import PrestasiMahasiswaID from "./pages/PrestasiMahasiswa/PrestasiMahasiwa-ID";
 import PrestasiMahasiswaEN from "./pages/PrestasiMahasiswa/PrestasiMahasiswa-EN";
 
+import SoID from "./pages/strukturOrganisasi/StrukturOrganisasi-ID";
+import SoEN from "./pages/strukturOrganisasi/StrukturOrganisasi-EN";
+
 function App() {
   return (
     <div className="app-container">
       <BrowserRouter>
         <Routes>
           {/* Error Page */}
-          <Route path="*" element={<Error/>}/>
-          
+          <Route path="*" element={<Error />} />
+
           <Route path="/" element={<Home />} />
 
           <Route path="/dosen" element={<Navigate to="/dosen/id" replace />} />
@@ -44,8 +47,14 @@ function App() {
           <Route path="/sambutan-kaprodi" element={<SambutanKaprodi />} />
           <Route path="/sambutan-kaprodi/:lang" element={<SambutanKaprodi />} />
 
-          <Route path="/prestasi-mahasiswa/id" element={<PrestasiMahasiswaID />} />
-          <Route path="/prestasi-mahasiswa/en" element={<PrestasiMahasiswaEN />} />
+          <Route
+            path="/prestasi-mahasiswa/id"
+            element={<PrestasiMahasiswaID />}
+          />
+          <Route
+            path="/prestasi-mahasiswa/en"
+            element={<PrestasiMahasiswaEN />}
+          />
 
           <Route path="/faq/id" element={<FaqID />} />
           <Route path="/faq/en" element={<FaqEN />} />
@@ -53,6 +62,8 @@ function App() {
           <Route path="/pmb" element={<Navigate to="/pmb/id" replace />} />
           <Route path="/pmb/id" element={<PMB />} />
           <Route path="/pmb/en" element={<PMBEN />} />
+          <Route path="/so/id" element={<SoID />} />
+          <Route path="/so/en" element={<SoEN />} />
         </Routes>
       </BrowserRouter>
     </div>
