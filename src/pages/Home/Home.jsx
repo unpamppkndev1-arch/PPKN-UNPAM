@@ -27,7 +27,11 @@ const routes = [
         path: "/sambutan-kaprodi/en",
         lang: "en",
       },
-      { label: "Prestasi Mahasiswa", path: "/prestasi-mahasiswa/id", lang: "id" },
+      {
+        label: "Prestasi Mahasiswa",
+        path: "/prestasi-mahasiswa/id",
+        lang: "id",
+      },
       {
         label: "Student Accomplishment",
         path: "/prestasi-mahasiswa/en",
@@ -37,6 +41,8 @@ const routes = [
       { label: "FAQ", path: "/faq/en", lang: "en" },
       { label: "PMB", path: "/pmb/id", lang: "id" },
       { label: "PMB", path: "/pmb/en", lang: "en" },
+      { label: "Struktur Organisasi", path: "/so/id", lang: "id" },
+      { label: "Organizational Structure", path: "/so/en", lang: "en" },
     ],
   },
 ];
