@@ -254,7 +254,8 @@ body {
 
 .so-avatar--photo {
   background: transparent;
-  box-shadow: none;
+  border: 2px solid rgba(201, 150, 46, 0.7);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(201, 150, 46, 0.55);
   overflow: hidden;
 }
 
