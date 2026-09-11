@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter:wght@400;500;600;700;800&display=swap");
 
 .sambutan {
   --ink: #0a0a0a;
@@ -14,7 +14,7 @@
   overflow: hidden;
   max-width: 1120px;
   margin: 0 auto;
-  /* padding: 6.5rem 1.5rem 7rem; */
+  padding: 0 0.5rem;
   background: #ffffff;
   color: var(--ink);
   font-family: var(--sans);
@@ -23,7 +23,7 @@
 /* ---------- Kata latar raksasa (outline) ---------- */
 .sambutan-bg-word {
   position: absolute;
-  top: -3rem;
+  top: -3.5vw;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
@@ -63,10 +63,16 @@
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease;
 }
-.sambutan-lang-toggle button.is-active { background: var(--ink); color: #ffffff; }
+.sambutan-lang-toggle button.is-active {
+  background: var(--ink);
+  color: #ffffff;
+}
 
 /* ---------- Header ---------- */
-.sambutan-header { position: relative; text-align: center; }
+.sambutan-header {
+  position: relative;
+  text-align: center;
+}
 
 .sambutan-eyebrow {
   display: flex;
@@ -80,7 +86,11 @@
   text-transform: uppercase;
   color: var(--muted);
 }
-.sambutan-eyebrow-line { width: 3rem; height: 1.5px; background: var(--ink); }
+.sambutan-eyebrow-line {
+  width: 3rem;
+  height: 1.5px;
+  background: var(--ink);
+}
 
 .sambutan-title {
   margin: 0;
@@ -90,7 +100,11 @@
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
-.sambutan-title em { font-style: italic; font-weight: 500; color: var(--maroon); }
+.sambutan-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--maroon);
+}
 
 .sambutan-subtitle {
   max-width: 560px;
@@ -107,8 +121,17 @@
   gap: 0.75rem;
   margin-top: 1.75rem;
 }
-.sambutan-divider span { width: 2.5rem; height: 1.5px; background: var(--ink); }
-.sambutan-divider i { width: 8px; height: 8px; background: var(--maroon); transform: rotate(45deg); }
+.sambutan-divider span {
+  width: 2.5rem;
+  height: 1.5px;
+  background: var(--ink);
+}
+.sambutan-divider i {
+  width: 8px;
+  height: 8px;
+  background: var(--maroon);
+  transform: rotate(45deg);
+}
 
 /* ---------- Grid utama ---------- */
 .sambutan-grid {
@@ -120,7 +143,10 @@
 }
 
 @media (min-width: 961px) {
-  .sambutan-card-col { position: sticky; top: 2.5rem; }
+  .sambutan-card-col {
+    position: sticky;
+    top: 2.5rem;
+  }
 }
 
 /* ---------- Kartu foto ---------- */
@@ -131,15 +157,21 @@
   padding: 1.25rem 1.25rem 1.75rem;
   box-shadow: 12px 12px 0 var(--maroon);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .sambutan-card:hover {
   transform: translate(-4px, -4px);
   box-shadow: 16px 16px 0 var(--maroon);
 }
 
-.sambutan-photo-wrap { position: relative; }
-.sambutan-photo { display: block; width: 100%; height: auto; }
+.sambutan-photo-wrap {
+  position: relative;
+}
+.sambutan-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 .sambutan-photo-placeholder {
   aspect-ratio: 4 / 5;
@@ -178,8 +210,8 @@
 }
 
 .sambutan-card-body {
-  text-align: left; 
-  }
+  text-align: left;
+}
 
 .sambutan-name {
   margin: 0 0 1rem;
@@ -221,12 +253,26 @@
   transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .sambutan-role:hover,
-.sambutan-role:focus-visible { color: #ffffff; border-color: var(--maroon); }
+.sambutan-role:focus-visible {
+  color: #ffffff;
+  border-color: var(--maroon);
+}
 .sambutan-role:hover::before,
-.sambutan-role:focus-visible::before { width: 100%; }
-.sambutan-role svg { width: 0.85em; height: 0.85em; transition: transform 0.35s ease; }
-.sambutan-role:hover svg { transform: translate(2px, -2px); }
-.sambutan-role:focus-visible { outline: 2px solid var(--maroon); outline-offset: 3px; }
+.sambutan-role:focus-visible::before {
+  width: 100%;
+}
+.sambutan-role svg {
+  width: 0.85em;
+  height: 0.85em;
+  transition: transform 0.35s ease;
+}
+.sambutan-role:hover svg {
+  transform: translate(2px, -2px);
+}
+.sambutan-role:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 3px;
+}
 
 /* Chip akreditasi */
 .sambutan-chip {
@@ -242,10 +288,20 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-.sambutan-chip-dot { width: 9px; height: 9px; flex: none; border-radius: 50%; background: var(--maroon); }
+.sambutan-chip-dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--maroon);
+}
 
 /* ---------- Kolom isi ---------- */
-.sambutan-content { display: flex; flex-direction: column; gap: 1.4rem; }
+.sambutan-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
 
 .sambutan-paragraph {
   margin: 0;
@@ -264,7 +320,9 @@
   color: var(--ink);
   text-align: left;
 }
-.sambutan-paragraph--greeting + .sambutan-paragraph--greeting { margin-top: -0.8rem; }
+.sambutan-paragraph--greeting + .sambutan-paragraph--greeting {
+  margin-top: -0.8rem;
+}
 
 .sambutan-paragraph--dropcap::first-letter {
   float: left;
@@ -318,7 +376,12 @@
   background: var(--maroon);
   transform: translateY(-50%) rotate(45deg);
 }
-.sambutan-sign-name { margin: 0; font-family: var(--serif); font-size: 1.4rem; font-weight: 600; }
+.sambutan-sign-name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
 .sambutan-sign-role {
   margin: 0.4rem 0 0;
   font-size: 0.78rem;
@@ -329,33 +392,72 @@
 }
 
 /* ---------- Animasi masuk ---------- */
-.sambutan [data-animate] { animation: sambutan-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.sambutan [data-animate] {
+  animation: sambutan-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 @keyframes sambutan-rise {
-  from { opacity: 0; transform: translateY(26px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---------- Responsif ---------- */
 @media (max-width: 960px) {
-  /* .sambutan { padding: 5rem 1.25rem 5.5rem; } */
-  .sambutan-grid { grid-template-columns: 1fr; margin-top: 3.5rem; }
-  .sambutan-card { max-width: 420px; margin: 0 auto; }
-  .sambutan-chip { max-width: 420px; margin-left: auto; margin-right: auto; }
-  .sambutan-lang-toggle { top: 1rem; right: 1rem; }
+  .sambutan {
+    padding: 0 1rem;
+  }
+  .sambutan-grid {
+    grid-template-columns: 1fr;
+    margin-top: 3.5rem;
+  }
+  .sambutan-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .sambutan-chip {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sambutan-lang-toggle {
+    top: 1rem;
+    right: 1rem;
+  }
 }
 @media (max-width: 560px) {
-  .sambutan-card { box-shadow: 8px 8px 0 var(--maroon); }
-  .sambutan-card:hover { box-shadow: 10px 10px 0 var(--maroon); }
-  .sambutan-quote-badge { width: 50px; height: 50px; font-size: 2.2rem; right: -0.5rem; bottom: -1.25rem; }
-  .sambutan-paragraph { font-size: 1rem; }
+  .sambutan-card {
+    box-shadow: 8px 8px 0 var(--maroon);
+  }
+  .sambutan-card:hover {
+    box-shadow: 10px 10px 0 var(--maroon);
+  }
+  .sambutan-quote-badge {
+    width: 50px;
+    height: 50px;
+    font-size: 2.2rem;
+    right: -0.5rem;
+    bottom: -1.25rem;
+  }
+  .sambutan-paragraph {
+    font-size: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sambutan [data-animate] { animation: none; }
+  .sambutan [data-animate] {
+    animation: none;
+  }
   .sambutan-card,
   .sambutan-role,
   .sambutan-role::before,
-  .sambutan-role svg { transition: none; }
+  .sambutan-role svg {
+    transition: none;
+  }
 }
 
 .sambutan-loading {
