@@ -20,8 +20,6 @@
   font-family: var(--sans);
 }
 
-.sambutan ::selection { background: var(--maroon); color: #ffffff; }
-
 /* ---------- Kata latar raksasa (outline) ---------- */
 .sambutan-bg-word {
   position: absolute;
