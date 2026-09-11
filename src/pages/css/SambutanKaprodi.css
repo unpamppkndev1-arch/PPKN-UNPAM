@@ -337,7 +337,7 @@
 
 /* ---------- Responsif ---------- */
 @media (max-width: 960px) {
-  .sambutan { padding: 5rem 1.25rem 5.5rem; }
+  /* .sambutan { padding: 5rem 1.25rem 5.5rem; } */
   .sambutan-grid { grid-template-columns: 1fr; margin-top: 3.5rem; }
   .sambutan-card { max-width: 420px; margin: 0 auto; }
   .sambutan-chip { max-width: 420px; margin-left: auto; margin-right: auto; }
