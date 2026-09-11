@@ -7,7 +7,7 @@ export default function SambutanKaprodi() {
   const [data] = useState({
 
       id: {
-        nama: "Dr. Ichwani Siti Utami, S.Pd., M.H",
+        // nama: "Dr. Ichwani Siti Utami, S.Pd., M.H",
         jabatan: "Ketua Program Studi",
         fotoId: 1,
         paragraf: [
@@ -21,7 +21,7 @@ export default function SambutanKaprodi() {
         ],
       },
       en: {
-        nama: "Dr. Ichwani Siti Utami, S.Pd., M.H",
+        // nama: "Dr. Ichwani Siti Utami, S.Pd., M.H",
         jabatan: "Head of Study Program",
         fotoId: 1,
         paragraf: [

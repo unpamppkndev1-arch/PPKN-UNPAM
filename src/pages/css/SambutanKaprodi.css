@@ -177,7 +177,9 @@
   box-shadow: 0 10px 24px rgba(85, 0, 0, 0.28);
 }
 
-.sambutan-card-body { padding-top: 2.25rem; text-align: left; }
+.sambutan-card-body {
+  text-align: left; 
+  }
 
 .sambutan-name {
   margin: 0 0 1rem;
