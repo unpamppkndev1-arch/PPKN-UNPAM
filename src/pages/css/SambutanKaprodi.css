@@ -14,7 +14,7 @@
   overflow: hidden;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 6.5rem 1.5rem 7rem;
+  /* padding: 6.5rem 1.5rem 7rem; */
   background: #ffffff;
   color: var(--ink);
   font-family: var(--sans);
@@ -23,7 +23,7 @@
 /* ---------- Kata latar raksasa (outline) ---------- */
 .sambutan-bg-word {
   position: absolute;
-  top: 1.75rem;
+  top: -3rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
