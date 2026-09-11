@@ -8,3 +8,6 @@
   /* overflow: hidden; */
 }
 
+* ::selection { 
+  background: #550000; color: #ffffff; 
+}
