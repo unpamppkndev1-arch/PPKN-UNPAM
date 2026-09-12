@@ -63,8 +63,7 @@ export default function TentangProdiNewEN() {
           <div className="maps-right">
             <h2 className="maps-title">Location of Pamulang University Campus 2 Viktor</h2>
             <p className="maps-address">
-              Jl. Surya Kencana No.1, RT.001/RW.002, Cireundeu,
-              East Ciputat District, South Tangerang City, Banten 15419
+               Jl. Puspitek, Buaran, Kecamatan Pamulang, Kota Tangerang Selatan, Banten 15310 
             </p>
             <a
               className="maps-btn"

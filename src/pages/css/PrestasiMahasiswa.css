@@ -5,10 +5,10 @@
     --prestasi-bg: #fff8f3;
     min-height: 100vh;
     padding: 48px 20px 64px;
-    background:
+    /* background:
         radial-gradient(circle at 8% 6%, rgba(170, 46, 37, 0.16), transparent 36%),
         radial-gradient(circle at 92% 95%, rgba(222, 143, 44, 0.12), transparent 36%),
-        linear-gradient(180deg, #fffdfb 0%, var(--prestasi-bg) 100%);
+        linear-gradient(180deg, #fffdfb 0%, var(--prestasi-bg) 100%); */
 }
 
 .PrestasiTerbaru {

@@ -74,8 +74,7 @@ export default function TentangProdiNewID() {
           <div className="maps-right">
              <h2 className="maps-title">Lokasi Universitas Pamulang Kampus 2 Viktor</h2>
             <p className="maps-address">
-              Jl. Surya Kencana No.1, RT.001/RW.002, Cireundeu,
-              Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419
+                  Jl. Puspitek, Buaran, Kecamatan Pamulang, Kota Tangerang Selatan, Banten 15310 
             </p>
             <a
               className="maps-btn"
