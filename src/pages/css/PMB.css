@@ -558,6 +558,7 @@
 .pmbDates {
     padding: 72px 40px 100px;
     background: var(--pmb-surface);
+    border-radius: clamp(8px, 5vw, 16px);
 }
 
 .pmbDates__inner {
