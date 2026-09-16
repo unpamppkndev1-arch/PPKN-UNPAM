@@ -151,8 +151,8 @@ const Icons = {
   ),
   Cap: () => (
     <svg
-      width="17"
-      height="17"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -298,7 +298,7 @@ function Hero() {
           <span className="sep">/</span>
           <span>{PRODI.fakultas}</span>
           <span className="sep">/</span>
-          <span aria-current="page">Prodi {PRODI.singkatan}</span>
+          <span>Prodi {PRODI.singkatan}</span>
         </nav>
 
         <span className="hero__badge">
