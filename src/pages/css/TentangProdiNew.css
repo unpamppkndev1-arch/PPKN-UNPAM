@@ -161,6 +161,7 @@
       ===================================================== */
    .hero {
      position: relative;
+    border-radius: clamp(6px, 30vw, 12px);
      /* min-height: 100vh; */
      display: flex; align-items: center; justify-content: center;
      text-align: center;
@@ -335,7 +336,7 @@
       SECTION GELAP (video profil)
       ===================================================== */
    .section--dark {
-    /* border-radius: clamp(8px, 35vw, 16px); */
+     border-radius: clamp(6px, 30vw, 12px);
      position: relative;
      background:
        radial-gradient(900px 420px at 12% -5%, rgba(138, 16, 16, 0.32), transparent 60%),
