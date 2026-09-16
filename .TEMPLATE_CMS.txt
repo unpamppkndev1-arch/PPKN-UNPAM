@@ -36,7 +36,7 @@
     }
   }
 
-  /* Desktop */
+  /* Desktop (fhd 2k 4k) */
   @media (min-width: 1440px) {
     .preset-cms {
       height: 1300px; /* 130vh untuk layar lebar */
