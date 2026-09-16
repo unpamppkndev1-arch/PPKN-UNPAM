@@ -20,7 +20,7 @@
      --ink-900: #191512;
      --ink-700: #43403c;
      --ink-500: #6f6a64;
-     --paper: #faf8f5;
+     --paper: #ffffff;
      --white: #ffffff;
    
      --radius-sm: 12px;
@@ -521,7 +521,7 @@
    
    @media (max-width: 820px) {
      .section { padding-block: 4rem; }
-     .hero { min-height: 88vh; }
+     /* .hero { min-height: 88vh; } */
      .hero__content { padding: 7.5rem 1.25rem 7rem; }
      .hero__breadcrumb, .hero__scroll { display: none; }
    
