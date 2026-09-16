@@ -32,7 +32,7 @@ const PRODI = {
     nama: "Kampus 2 (UNPAM Viktor)",
     alamat:
       "Jl. Puspitek, Buaran, Kecamatan Pamulang, Kota Tangerang Selatan, Banten 15310",
-    jam: "Senin – Jumat · 08.00 – 17.00 WIB",
+    jam: "Senin – Sabtu · 09.00 – 18.00 WIB",
     mapsEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.531125393861!2d106.69161309884123!3d-6.345802704278216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5a6e26dc3cd%3A0xccd6344b8021119d!2sUniversitas%20Pamulang%20Kampus%202%20(UNPAM%20Viktor)!5e0!3m2!1sid!2sid!4v1786337962117!5m2!1sid!2sid",
     mapsLink:
@@ -294,9 +294,9 @@ function Hero() {
 
       <div className="hero__content">
         <nav className="hero__breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Beranda</a>
+          <span>Beranda</span>
           <span className="sep">/</span>
-          <a href="#beranda">{PRODI.fakultas}</a>
+          <span>{PRODI.fakultas}</span>
           <span className="sep">/</span>
           <span aria-current="page">Prodi {PRODI.singkatan}</span>
         </nav>
