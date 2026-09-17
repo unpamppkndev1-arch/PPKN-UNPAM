@@ -538,7 +538,7 @@ function Lokasi() {
       <div className="container">
         <SectionHeading
           eyebrow="Lokasi Kampus"
-          title="Kunjungi Kampus 2 — UNPAM Viktor"
+          title="Kunjungi Kampus 2 UNPAM Viktor"
         />
 
         <div className="lokasi__grid">
