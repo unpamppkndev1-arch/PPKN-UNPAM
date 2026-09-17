@@ -585,7 +585,7 @@ function Lokasi() {
 /* =====================================================================
    MAIN
    ===================================================================== */
-export default function TentangProdiNewID() {
+export default function TentangProdiNewEN() {
   return (
     <main className="prodi">
       <Hero />
