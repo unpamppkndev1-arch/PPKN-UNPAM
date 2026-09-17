@@ -19,7 +19,7 @@
 
   position: relative;
   min-height: 100vh;
-  padding: clamp(48px, 8vw, 96px) 20px 88px;
+  padding: 0 20px 88px;
   overflow: hidden;
 }
 
@@ -50,7 +50,7 @@
 
 /* ---------- Container ---------- */
 .P-container {
-  position: relative;
+  /* position: relative; */
   z-index: 1;
   width: min(1100px, 100%);
   margin: 0 auto;
@@ -225,7 +225,7 @@
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
   .P-prestasiPage {
-    padding: 36px 16px 56px;
+    padding: 0 16px 56px;
   }
 
   .P-stats {
