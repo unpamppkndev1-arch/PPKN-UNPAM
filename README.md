@@ -1,8 +1,5 @@
 # Website Program Studi PPKn UNPAM
 
-![Uploading image.png…]()
-
-
 Portal informasi resmi Program Studi Pendidikan Pancasila dan Kewarganegaraan
 (PPKn), Universitas Pamulang (UNPAM). Aplikasi ini menyajikan informasi
 program studi, dosen, akademik, penerimaan mahasiswa baru, prestasi mahasiswa,
